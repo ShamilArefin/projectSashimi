@@ -4,24 +4,86 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Project Sashimi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
     <script src="main.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
+    
 </head>
 
 <body>
     <div class="container">
-        <div class="jumbotron" style="background-color: black; color: white">
-            <h1 class="text-center">Employee Data Management</h1>
-            <h3 class="text-center">A Comprehensive Directory of Employee Billable Hours</h3>
+        <div class="jumbotron">
+            <h1>
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Employee Data Management</h1>
         </div>
+
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Current Employees</div>
+
+            <!-- Table -->
+            <table class="table">
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Role</th>
+                    <th>Start Date</th>
+                    <th>Monthly Rate ($)</th>
+                    <th>Total Rate ($)</th>
+                </tr>
+                <div id="new-employees">
+
+                </div>
+            </table>
+        </div>
+        <div class="row">
+            <div=c lass "col-md-6">
+                <div class="col-md-12">
+                    <div id="word" class="col-md-12 panel panel-default">
+                        <h4 id="search">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Employee</h4>
+                        <div class="panel-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Employee Name</label>
+                                    <input type="text" class="form-control" id="employee-name" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Role</label>
+                                    <input type="text" class="form-control" id="role" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Start Date (DD/MM/YY - ex. 01/01/72)</label>
+                                    <input type="text" class="form-control" id="start-date" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1" id="search-term">Pay Rate</label>
+                                    <input type="int" class="form-control" id="pay-rate" placeholder="">
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="submit">Submit
+                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                </button>
+
+                            </form>
+
+                        </div>
+                        <!-- /.col-md-12 -->
+
+                    </div>
+                    <!-- /.col-md-12 -->
+                </div>
+                <!-- /.col-md-12 -->
+        </div>
+        <!--/.col-md-6-->
+    </div>
+    <script src="timesheet.js"></script>
 </body>
 
 </html>
