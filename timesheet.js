@@ -48,10 +48,10 @@ database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", functi
     console.log(storeVal.monthlyRate);
 
     // Change the HTML to reflect
-    $("#name-display").text(storeVal.empName);
-    $("#email-display").text(storeVal.role);
-    $("#age-display").text(storeVal.startDate);
-    $("#comment-display").text(storeVal.monthlyRate);
+    $("#employee-name").text(storeVal.empName);
+    $("#role").text(storeVal.role);
+    $("#start-date").text(storeVal.startDate);
+    $("#pay-rate").text(storeVal.monthlyRate);
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
 });
