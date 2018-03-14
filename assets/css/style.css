@@ -1,6 +1,6 @@
 .jumbotron {
     text-align: center;
-    background-color: rgb(0, 0, 209);
+    background-color: black;
     color: white;
     padding: 20px;
     margin-top: 0%;
@@ -8,26 +8,10 @@
     border-radius: 4px;
 }
 
-#top-articles {
-    background-color: rgb(0, 0, 209);
-    color: white;
-    padding: 5px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: -4px;
-}
-
 .snippet, .media-body {
     background: rgb(218, 218, 218);
     padding: 2px;
     margin: 1px 5px;
-}
-
-#image {
-    margin: 0 5px;
-}
-
-.snippet {
-    margin-bottom: 10px;
 }
 
 .media {
@@ -38,10 +22,27 @@
 .btn {
     background: rgb(0, 0, 209);
 }
-
-#search {
-    background-color: rgb(0, 0, 209);
+.footer{
+    position: relative;
+    bottom: 0px;
+    background: black;
+    border-top: 2px groove white;
+    /* border-bottom: 2px groove red; */
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
     color: white;
-    padding: 5px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    float: right;
+}
+
+.content {
+    min-height: calc(100vh - 70px);
+  }
+
+#github {
+    z-index: 10;
+    height: 30px;
+    width: 30px;
+    margin: 10px 2px;
 }
