@@ -14,7 +14,7 @@ var empName = "";
 var role = "";
 var startDate = "";
 var monthsWorked = 0;
-var monthsWorked = 0;
+var monthlyRate = 0;
 var totalBilled = 0;
 var dateAdded = 0;
 var database = firebase.database();
@@ -48,10 +48,9 @@ database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", functi
     console.log(storeVal.monthlyRate);
 
     // Change the HTML to reflect
-    $("#employee-name").text(storeVal.empName);
-    $("#role").text(storeVal.role);
-    $("#start-date").text(storeVal.startDate);
-    $("#pay-rate").text(storeVal.monthlyRate);
+    $("#employee-table").append("<th><td>" + storeVal.empName + "</td>" + 
+    "<td>" + storeVal.role + "</td>" + "<td>" + storeVal.startDate + "</td>" + "<td>" + storeVal.monthsWorked + "</td>" + "<td>" + storeVal.monthlyRate + "</td></th>" + "<td>" + storeVal.totalBilled + "</td>");
+
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
 });
