@@ -1,10 +1,14 @@
 .dropdown{
     float: right;
     margin-right: 16px;
+    color: pink;
 }
 .toggleButts{
     text-align: center;
 }
 .jumbotron{
     background-image: url(../images/searchboxbg.jpg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
