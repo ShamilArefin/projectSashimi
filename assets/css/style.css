@@ -1,3 +1,10 @@
+.dropdown{
+    float: right;
+    margin-right: 16px;
+}
+.toggleButts{
+    text-align: center;
+}
 .jumbotron{
-    color: black;
+    background-image: url(../images/searchboxbg.jpg);
 }
