@@ -33,6 +33,6 @@
 
   });
 
- function(errorObject) {
-    console.log("Errors handled: " + errorObject.code);
-  }
+ //function(errorObject) {
+    //console.log("Errors handled: " + errorObject.code);
+  //}
