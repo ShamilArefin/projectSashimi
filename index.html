@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel = "stylesheet" href = "./assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src = "./assets/java/weather.js"></script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body style = "background-image: url(./assets/images/sushineutral.gif)">
+
+
+    <!--checkbox buttons to choose one or more types of events-->
+    <div class = "container">
+    <div class = "jumbotron">
+        <nav class = "navbar navbar-default">
+            <div class = "container-fluid">
+        <div class = "toggleButts">
+        <class="btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active" style= "background-color: black">
+                <input type="checkbox" id="musicButton"> Music </label>
+        </class>
+        <class="btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active" style= "background-color: black">
+                <input type="checkbox" id="foodButton"> Food and Drink </label>
+        </class>
+        <class="btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active" style= "background-color: black">
+                <input type="checkbox" id="classesButton"> Classes </label>
+        </class>
+        <class="btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active" style= "background-color: black">
+                <input type="checkbox" id="artsButton"> Arts </label>
+        </class>
+        <class="btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active" style= "background-color: black">
+                <input type="checkbox" id="partiesButton"> Parties </label>
+        </class>
+        <class="btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active" style= "background-color: black">
+                <input type="checkbox" id="sportsButton"> Sports and Wellness </label>
+        </class>
+        <class="btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active" style= "background-color: black">
+                <input type="checkbox" id="networkingButton"> Networking </label>
+        </class>
+        <class="btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active" style= "background-color: black">
+                <input type="checkbox" id="allButton"> All Events </label>
+        </class>
+        </div>
+        </div>
+        </nav>
+
+                                        <!--Location form box-->
+    <div class="form-group mx-sm-3 mb-2">
+        <label for="inputLocation" class="sr-only">Location</label>
+        <input type="location" class="form-control" id="inputLocation" placeholder="City or Zipcode">
+    </div>
+
+    <div class="form-group mx-sm-3 mb-2">
+            <label for="inputLocation" class="sr-only">Tags</label>
+            <input type="location" class="form-control" id="inputTags" placeholder="Anythin specific? Separate Keywords with a ','">
+    </div>
+
+        <!--Dropdown box to choose date range to search-->
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownDateButton" data-toggle="dropdown-menu" aria-haspopup="true"
+                aria-expanded="false" style= "background-color: black">All Dates
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" id="today" href="#">Today</a>
+                <a class="dropdown-item" id="thisWeekend" href="#">This Weekend</a>
+                <a class="dropdown-item" id="thisWeek" href="#">This Week</a>
+                <a class="dropdown-item" id="thisMonth" href="#">This Month</a>
+            </div>
+                                                <!--Submit button-->
+            <button type="submit" class="btn btn-secondary submit" style= "background-color: black">Find Events</button>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>
