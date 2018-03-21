@@ -19,6 +19,9 @@ function displayMovieInfo() {
             var plot = response.Plot;
             var pThree = $("<p>").text("Plot: " + plot);
             movieDiv.append(pThree);
+            var ratings = response.imdbRating;
+            var pFour = $("<p>").text("IMDB Rating: " + ratings);
+            movieDiv.append(pFour);
             var imgURL = response.Poster;
             var image = $("<img>").attr("src", imgURL);
             movieDiv.append(image);
