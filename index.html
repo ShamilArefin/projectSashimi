@@ -11,13 +11,21 @@
 
     <script src="assets/javascript/app.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+    <!--script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"--></script>
 
-    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>        
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        
+    
+
     </head>
 
     <body>
@@ -67,59 +75,80 @@
 
         <!-- Begin Amanda HTML ------------------------------------------------>
         <!-- ------------------------------------------------------------------>
-        <!--checkbox buttons to choose one or more types of events-->
-        <class="btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-secondary active">
-                <input type="checkbox" id="musicButton"> Music </label>
-
-            <class="btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                    <input type="checkbox" id="foodButton"> Food and Drink </label>
-
-                <class="btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary active">
-                        <input type="checkbox" id="classesButton"> Classes </label>
-
-                    <class="btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-secondary active">
-                            <input type="checkbox" id="artsButton"> Arts </label>
-
-                        <class="btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary active">
-                                <input type="checkbox" id="partiesButton"> Parties </label>
-
-                            <class="btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-secondary active">
-                                    <input type="checkbox" id="sportsButton"> Sports and Wellness </label>
-
-                                <class="btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-secondary active">
-                                        <input type="checkbox" id="networkingButton"> Networking </label>
-
-                                    <class="btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-secondary active">
-                                            <input type="checkbox" id="allButton"> All Events </label>
+        <!--Dropdown for Genre-->
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Genre
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <button class="dropdown-item" type="button">Action</button>
+              <button class="dropdown-item" type="button">Adventure</button>
+              <button class="dropdown-item" type="button">Comedy</button>
+              <button class="dropdown-item" type="button">Crime</button>
+              <button class="dropdown-item" type="button">Documentary</button>
+              <button class="dropdown-item" type="button">Drama</button>
+              <button class="dropdown-item" type="button">History</button>
+              <button class="dropdown-item" type="button">Romance</button>
+              <button class="dropdown-item" type="button">Sci-Fi</button>
+            </div>
+          </div>
 
 
-                                        <!--Location form box-->
-                                        <div class="form-group mx-sm-3 mb-2">
-                                            <label for="inputLocation" class="sr-only">Location</label>
-                                            <input type="location" class="form-control" id="inputLocation" placeholder="City or Zip">
+       <!--Form Boxes for Years-->
+       <div class="form-group col-md-2">
+            <label for="inputFromYear">From (Year)</label>
+            <input type="number" class="form-control" id="inputFromYear">
+            </div>
+            <div class="form-group col-md-2">
+            <label for="inputToYear">To (Year)</label>
+            <input type="number" class="form-control" id="inputToYear">
+        </div>
 
-                                            <!--Dropdown box to choose date range to search-->
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownDateButton" data-toggle="dropdown" aria-haspopup="true"
-                                                    aria-expanded="false">All Dates
-                                                </button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" id="today" href="#">Today</a>
-                                                    <a class="dropdown-item" id="thisWeekend" href="#">This Weekend</a>
-                                                    <a class="dropdown-item" id="thisWeek" href="#">This Week</a>
-                                                    <a class="dropdown-item" id="thisMonth" href="#">This Month</a>
+            <!--Dropdown box to choose star rating-->
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownDateButton" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">IMDB Star Rating
+                </button>
+                
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" id="today" href="#">0 to 2 &star;</a>
+                    <a class="dropdown-item" id="thisWeekend" href="#">2 to 4 &star;</a>
+                    <a class="dropdown-item" id="thisWeek" href="#">4 to 6 &star;</a>
+                    <a class="dropdown-item" id="thisMonth" href="#">6 to 8 &star;</a>
+                    <a class="dropdown-item" id="thisMonth" href="#">8 to 10 &star;</a>
+            </div>
 
-                                                </div>
+            <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownDateButton" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Rating
+                    </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" id="today" href="#">G</a>
+                <a class="dropdown-item" id="thisWeekend" href="#">PG</a>
+                <a class="dropdown-item" id="thisWeek" href="#">PG-13</a>
+                <a class="dropdown-item" id="thisMonth" href="#">R</a>
+                <a class="dropdown-item" id="thisMonth" href="#">NC-17</a>
+                <a class="dropdown-item" id="thisMonth" href="#">Unrated</a>
+
+            </div>
+
+                                                 <!--div class="dropdown">
+                                                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            Rating
+                                                            </button>
+                                                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                                              <button class="dropdown-item" type="button">G</button>
+                                                              <button class="dropdown-item" type="button">PG</button>
+                                                              <button class="dropdown-item" type="button">PG-13</button>
+                                                              <button class="dropdown-item" type="button">R</button>
+                                                              <button class="dropdown-item" type="button">NC-17</button>
+                                                              <button class="dropdown-item" type="button">Unrated</button>
+                                                            </div>
+                                                          </div>
+
+                                                </div-->
                                                 <!--Submit button-->
-                                                <button type="submit" class="btn btn-secondary">Find Events</button>
+                                                <button type="submit" class="btn btn-secondary">Get My Movies!</button>
 
 
                                             </div>
