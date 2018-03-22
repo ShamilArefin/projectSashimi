@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
-
+    
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
@@ -232,8 +232,16 @@
         <!-- End Amanda HTML ------------------------------------------------>
         <h2>Upcoming Events!</h2>
 <div id="events"></div>
+
+<div id="buttons">
+        <label> <input id="query" value='cats' type="text"/><button id="search-button" disabled onclick="search()">Search</button></label>
+      </div>
+      <div id="search-container">
+      </div>
+      <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
         <script src="assets/javascript/auth.js"></script>
         <script src="assets/javascript/app.js"></script>
+
 </body>
 
 </html>
