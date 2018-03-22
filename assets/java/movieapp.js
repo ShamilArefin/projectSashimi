@@ -37,9 +37,9 @@ function displayMovieInfo() {
                 $("#buttons-view").append(a);
             }
         };
-    $("#add-movie").on("click", function (event) {
+    $("#submit-movie").on("click", function (event) {
             event.preventDefault();
-            var movie = $("#movie-input").val().trim();
+            var movie = $("#input-location").val().trim();
             movies.push(movie);
             renderButtons();
         });
