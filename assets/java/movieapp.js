@@ -1,8 +1,10 @@
-var movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
+var movies = ["Zoom"];
 function displayMovieInfo() {
     var apiKey = "b5a04afb";
-    var movie = $(this).attr("data-name").val().trim();
-    var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=" + apiKey;
+    debugger;
+    var movie = $("#inputLocation").val().trim(); 
+    // $(this).attr("data-name").val().trim();
+    var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=full&apikey=" + apiKey;
     console.log(queryURL);
 
         $.ajax({
@@ -10,6 +12,8 @@ function displayMovieInfo() {
             method: "GET"
         }).then(function (response) {
             var movieDiv = $("<div class='movie'>");
+            var image = $("<img>").attr("src", imgURL);
+            movieDiv.append(image);
             var rating = response.Rated;
             var pOne = $("<p>").text("Rating: " + rating);
             movieDiv.append(pOne);
@@ -23,26 +27,29 @@ function displayMovieInfo() {
             var pFour = $("<p>").text("IMDB Rating: " + ratings);
             movieDiv.append(pFour);
             var imgURL = response.Poster;
-            var image = $("<img>").attr("src", imgURL);
-            movieDiv.append(image);
-            $("#movies-view").prepend(movieDiv);
+            
+            $("#movies-view").append(movieDiv);
     });
-    function renderButtons() {
-            $("#buttons-view").empty();
-            for (var i = 0; i < movies.length; i++) {
-                var a = $("<button>");
-                a.addClass("movie-btn");
-                a.attr("data-name", movies[i]);
-                a.text(movies[i]);
-                $("#buttons-view").append(a);
-            }
-        };
-    $("#submit-movie").on("click", function (event) {
-            event.preventDefault();
-            var movie = $("#input-location").val().trim();
-            movies.push(movie);
-            renderButtons();
-        });
-    $(document).on("click", ".movie-btn", displayMovieInfo);
-    renderButtons();
-    }
+}
+
+function renderButtons() {
+        $("#buttons-view").empty();
+        for (var i = 0; i < movies.length; i++) {
+            var a = $("<button>");
+            a.addClass("movie-btn");
+            a.attr("data-name", movies[i]);
+            a.text(movies[i]);
+            $("#buttons-view").append(a);
+        }
+}
+var test = $("#submit-movie");
+test.click( function (event) {
+        event.preventDefault();
+       // var movie = $("#input-location").val().trim();
+        //movies.push(movie);
+        displayMovieInfo();
+        renderButtons();
+    });
+$(document).on("click", ".movie-btn", displayMovieInfo);
+renderButtons();
+    
