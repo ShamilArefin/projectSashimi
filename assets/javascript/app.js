@@ -9,6 +9,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
+<<<<<<< HEAD
 //////////////////////////////////////////
 // Authentication //
 /////////////////////////////////////////
@@ -52,4 +53,20 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     } else {
         console.log("not logged in");
     }
+=======
+
+var provider = new firebase.auth.GoogleAuthProvider();
+var provider = new firebase.auth.FacebookAuthProvider();
+var provider = new firebase.auth.TwitterAuthProvider();
+var provider = new firebase.auth.GithubAuthProvider();
+
+auth.currentUser.linkWithPopup(provider).then(function (result) {
+    // Accounts successfully linked.
+    var credential = result.credential;
+    var user = result.user;
+    // ...
+}).catch(function (error) {
+    // Handle Errors here.
+    // ...
+>>>>>>> 83606a756b85664b61dd84d5a4f1c49a63b9fab1
 });
