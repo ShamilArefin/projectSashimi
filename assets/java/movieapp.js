@@ -3,7 +3,6 @@ function displayMovieInfo() {
     var apiKey = "b5a04afb";
     var movie = $("#inputName").val().trim(); 
     var year = $("#inputYear").val().trim();
-    // $(this).attr("data-name").val().trim();
     var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=" + year + "&plot=full&apikey=" + apiKey;
     console.log(queryURL);
 
@@ -33,23 +32,10 @@ function displayMovieInfo() {
     });
 }
 
-function renderButtons() {
-        $("#buttons-view").empty();
-        for (var i = 0; i < movies.length; i++) {
-            var a = $("<button>");
-            a.addClass("movie-btn");
-            a.attr("data-name", movies[i]);
-            a.text(movies[i]);
-            $("#buttons-view").append(a);
-        }
-}
 var test = $("#submit-movie");
 test.click( function (event) {
         event.preventDefault();
-       // var movie = $("#input-location").val().trim();
-        //movies.push(movie);
         displayMovieInfo();
-        renderButtons();
     });
 $(document).on("click", ".movie-btn", displayMovieInfo);
 
