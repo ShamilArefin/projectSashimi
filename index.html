@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
 
-    <!-- Bootstrap JS reference     -->
+    <!-- Bootstrap JS reference     --> 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -83,13 +83,13 @@
                     <!-- Modal body -->
                     <div class="modal-body">
                         <form>
-                            <input type="text" name="user" placeholder="Username">
-                            <input type="password" name="pass" placeholder="Password">
-                            <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                            <input type="text" name="user" placeholder="Email" id="someUsername">
+                            <input type="password" name="pass" placeholder="Password" id="somePassword">
+                            <input type="submit" name="login" class="login loginmodal-submit" value="Login" id="someLogin">
                         </form>
                     </div>
                     <div class="login-help">
-                        <a href="register.html">Register</a>
+                        <a href="register.html" id="someSignup">Register</a>
                         <a href="#">Forgot Password</a>
                     </div>
                     <!-- Modal footer -->
@@ -98,31 +98,9 @@
                     </div>
 
                 </div>
-            </div>
+            </div> 
         </div>
     </div>
-
-
-
-    <!-- <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="loginmodal-container">
-                <h1>Login to Your Account</h1>
-                <br>
-                <form>
-                    <input type="text" name="user" placeholder="Username">
-                    <input type="password" name="pass" placeholder="Password">
-                    <input type="submit" name="login" class="login loginmodal-submit" value="Login">
-                </form>
-
-                <div class="login-help">
-                    <a href="#">Register</a> -
-                    <a href="#">Forgot Password</a>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <!-- Display website name and image -->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -130,70 +108,98 @@
             <p class="lead">Find your event!!</p>
         </div>
     </div>
-    <!-- End Brian HTML ------------------------------------------------>
 
 
-    <!-- Begin Amanda HTML ------------------------------------------------>
-    <!-- ------------------------------------------------------------------>
+    <!-- End Brian HTML -->
+    <!-- Begin Amanda HTML -->
+    <!-- -->
     <!--checkbox buttons to choose one or more types of events-->
-    <class="btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-secondary active">
-            <input type="checkbox" id="musicButton"> Music </label>
+    <div class="container-fluid">
+        <button type="button" onclick="search1()" class="btn btn-info">Search by all</button>
+        <button type="button" onclick="search2()" class="btn btn-success">Search by Title</button>
+    </div>
+    <!--Location form box-->
+    <div class="form-group mx-sm-3 mb-2">
+        <label for="inputLocation" class="sr-only">Location</label>
+        <input style="display: none;" type="location" onkeyup="search_all()" class="form-control inputLocation hidden" id="inputLocation"
+            placeholder="Search all">
+        <input style="display: none;" type="location" class="form-control search_by_title hidden" placeholder="year" id="year">
+        <input style="display: none;" type="location" class="form-control search_by_title hidden" placeholder="Search by Title" id="search_title">
 
-        <class="btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-secondary active">
-                <input type="checkbox" id="foodButton"> Food and Drink </label>
+        <!--Dropdown box to choose date range to search-->
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownDateButton" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">All Dates
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" id="today" href="#">Today</a>
+                <a class="dropdown-item" id="thisWeekend" href="#">This Weekend</a>
+                <a class="dropdown-item" id="thisWeek" href="#">This Week</a>
+                <a class="dropdown-item" id="thisMonth" href="#">This Month</a>
+            </div>
+            <!--Submit button-->
+            <button onclick="search_title()" type="submit" class="btn btn-secondary">Find Events</button>
+        </div>
+        <!-- End Amanda HTML-->
+        <div class="main">
+            <div class="wrap">
+                <div class="section group">
+                    <div id="show"></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function search1() {
+                document.getElementById("inputLocation").style.display = "block";
+                document.getElementById("year").style.display = "none";
+                document.getElementById("search_title").style.display = "none";
+            }
+            function search2() {
+                document.getElementById("inputLocation").style.display = "none";
+                document.getElementById("search_title").style.display = "block";
+                document.getElementById("year").style.display = "block";
+            }
+            function search_all() {
+                var search_value = document.getElementById("inputLocation").value;
 
-            <class="btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                    <input type="checkbox" id="classesButton"> Classes </label>
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var myObj = JSON.parse(this.responseText);
+                        var len = myObj.Search[0].Title;
+                        var x = "";
+                        var j;
+                        var text = "";
+                        var childlen = 0;
+                        for (i in myObj.Search) {
+                            if (myObj.Search[i].imdbID != null) {
+                                x += '<div class="col_1_of_3 span_1_of_3"> <img width="400" height="241" src="' + myObj.Search[i].Poster + '" alt=""/> <div class="desc"><h3 id="title">' + myObj.Search[i].Title + '</h3><h4 class="m_2">Type: ' + myObj.Search[i].Type + '</h4> <h4 class="m_2">Release Year: ' + myObj.Search[i].Year + '</h4><h5 class="m_3">IMDB ID: ' + myObj.Search[i].imdbID + '</h5><h5 class="m_3">IMDB Url: <a target="_blank" href="http://www.imdb.com/title/' + myObj.Search[i].imdbID + '/">Link</a></h5> </div><div class="clear"></div></div></div>'
+                            }
+                        }
+                        document.getElementById("show").innerHTML = x;
+                    }
+                };
+                xmlhttp.open("GET", "https://www.omdbapi.com/?apikey=68842776&s=" + search_value + "", true);
+                xmlhttp.send();
+            }
+            function search_title() {
+                var search_value = document.getElementById("search_title").value;
+                var year = document.getElementById("year").value;
 
-                <class="btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary active">
-                        <input type="checkbox" id="artsButton"> Arts </label>
-
-                    <class="btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-secondary active">
-                            <input type="checkbox" id="partiesButton"> Parties </label>
-
-                        <class="btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary active">
-                                <input type="checkbox" id="sportsButton"> Sports and Wellness </label>
-
-                            <class="btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-secondary active">
-                                    <input type="checkbox" id="networkingButton"> Networking </label>
-
-                                <class="btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-secondary active">
-                                        <input type="checkbox" id="allButton"> All Events </label>
-
-
-                                    <!--Location form box-->
-                                    <div class="form-group mx-sm-3 mb-2">
-                                        <label for="inputLocation" class="sr-only">Location</label>
-                                        <input type="location" class="form-control" id="inputLocation" placeholder="City or Zip">
-
-                                        <!--Dropdown box to choose date range to search-->
-                                        <div class="dropdown">
-                                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownDateButton" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">All Dates
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" id="today" href="#">Today</a>
-                                                <a class="dropdown-item" id="thisWeekend" href="#">This Weekend</a>
-                                                <a class="dropdown-item" id="thisWeek" href="#">This Week</a>
-                                                <a class="dropdown-item" id="thisMonth" href="#">This Month</a>
-
-                                            </div>
-                                            <!--Submit button-->
-                                            <button type="submit" class="btn btn-secondary">Find Events</button>
-
-
-                                        </div>
-                                        <!-- End Amanda HTML ------------------------------------------------>
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var myObj = JSON.parse(this.responseText);
+                        var x = "";
+                        x += '<div class="col_1_of_3 span_1_of_3"> <img width="400" height="241" src="' + myObj.Poster + '" alt=""/> <div class="desc"><h3 id="title">' + myObj.Title + '</h3><h4 class="m_2">Type: ' + myObj.Type + '</h4> <h4 class="m_2">Release Year: ' + myObj.Year + '</h4><h5 class="m_3">IMDB ID: ' + myObj.imdbID + '</h5><h5 class="m_3">IMDB Url: <a target="_blank" href="http://www.imdb.com/title/' + myObj.imdbID + '/">Link</a></h5> </div><div class="section group example rating"><div class="col_1_of_2 span_1_of_2"> <ul> <li><img src="images/men.png" alt=""/><div class="m_desc"><span class="m_2">' + myObj.imdbRating + '%</span><br><span class="m_3">Rating</span></div><div class="clear"></div></li></ul> </div><div class="col_1_of_2 span_1_of_2"> <ul> <li><div class="m_desc"><span class="m_2">' + myObj.imdbVotes + '%</span><br><span class="m_3">ImdbVotes</span></div><div class="clear"></div></li></ul></div><div class="clear"></div></div></div>'
+                        document.getElementById("show").innerHTML = x;
+                    }
+                };
+                xmlhttp.open("GET", "https://www.omdbapi.com/?apikey=68842776&t=" + search_value + "&y=" + year + "", true);
+                xmlhttp.send();
+            }
+        </script>
 </body>
-
-<script src="assets/javascript/app.js"></script>
 
 </html>
