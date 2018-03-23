@@ -1,81 +1,35 @@
- $("document").on(ready, function(event) {
-      
-// The client ID is obtained from the {{ Google Cloud Console }}
-// at {{ https://cloud.google.com/console }}.
-// If you run this code from a server other than http://localhost,
-// you need to register your own client ID.
-var OAUTH2_CLIENT_ID = '940785553500-nrd10ac942iq1ourfcb22alq5kttuejg.apps.googleusercontent.com';
-var OAUTH2_SCOPES = [
-  'https://www.googleapis.com/auth/youtube'
-];
+$("#submit-search").on("click", function () {
+    var movieQuery = $("#input-location").val().trim();
+    var apiKey = "&api_key=f8e8f558517f0a86c0fb65b50d7ca5ff";
+    var pageParam = "&page=1&language=en-US";
+    var queryURL = "https://api.themoviedb.org/3/search/movie?&query=" + movieQuery + pageParam + apiKey;
 
-// Upon loading, the Google APIs JS client automatically invokes this callback.
-googleApiClientReady = function() {
-  gapi.auth.init(function() {
-    window.setTimeout(checkAuth, 1);
-  });
-}
+    //Calls our TMDB API to figure the movie API
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        var data = response.results;
+        console.log(data);
+        var movie = data[0];
+        console.log(movie);
+        var movieID = movie.id;
+        console.log(movieID);
+        
+        var trailerURL = "https://api.themoviedb.org/3/movie/" + movieID + "?language=en-US" + apiKey + "&append_to_response=videos";
 
-// Attempt the immediate OAuth 2.0 client flow as soon as the page loads.
-// If the currently logged-in Google Account has previously authorized
-// the client specified as the OAUTH2_CLIENT_ID, then the authorization
-// succeeds with no user intervention. Otherwise, it fails and the
-// user interface that prompts for authorization needs to display.
-function checkAuth() {
-  gapi.auth.authorize({
-    client_id: OAUTH2_CLIENT_ID,
-    scope: OAUTH2_SCOPES,
-    immediate: true
-  }, handleAuthResult);
-}
-
-// Handle the result of a gapi.auth.authorize() call.
-function handleAuthResult(authResult) {
-  if (authResult && !authResult.error) {
-    // Authorization was successful. Hide authorization prompts and show
-    // content that should be visible after authorization succeeds.
-    $('.pre-auth').hide();
-    $('.post-auth').show();
-    loadAPIClientInterfaces();
-  } else {
-    // Make the #login-link clickable. Attempt a non-immediate OAuth 2.0
-    // client flow. The current function is called when that flow completes.
-    $('#login-link').click(function() {
-      gapi.auth.authorize({
-        client_id: OAUTH2_CLIENT_ID,
-        scope: OAUTH2_SCOPES,
-        immediate: false
-        }, handleAuthResult);
+        $.ajax({
+            url: trailerURL,
+            method: "GET"
+        }).then(function (callback) {
+            var trailerData = callback;
+            console.log(trailerData);
+            var videos = trailerData.videos.results[0].key;
+            console.log(videos);
+        });
     });
-  }
-}
-
-// Load the client interfaces for the YouTube Analytics and Data APIs, which
-// are required to use the Google APIs JS client. More info is available at
-// https://developers.google.com/api-client-library/javascript/dev/dev_jscript#loading-the-client-library-and-the-api
-function loadAPIClientInterfaces() {
-  gapi.client.load('youtube', 'v3', function() {
-    handleAPILoaded();
-  });
-}
 
 
-// After the API loads, call a function to enable the search box.
-function handleAPILoaded() {
-    $('#search-button').attr('disabled', false);
-  }
-  
-  // Search for a specified string.
-  function search() {
-    var q = $('#query').val();
-    var request = gapi.client.youtube.search.list({
-      q: q,
-      part: 'snippet'
-    });
-  
-    request.execute(function(response) {
-      var str = JSON.stringify(response.result);
-      $('#search-container').html('<pre>' + str + '</pre>');
-    });
-  }
+
+
 });

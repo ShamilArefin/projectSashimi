@@ -2,7 +2,7 @@
 // at {{ https://cloud.google.com/console }}.
 // If you run this code from a server other than http://localhost,
 // you need to register your own client ID.
-var OAUTH2_CLIENT_ID = '202685644318-2rmqhvcabf44fvlmnild17a4r0sa22qj.apps.googleusercontent.com';
+var OAUTH2_CLIENT_ID = '940785553500-nrd10ac942iq1ourfcb22alq5kttuejg.apps.googleusercontent.com';
 var OAUTH2_SCOPES = [
   'https://www.googleapis.com/auth/youtube'
 ];
@@ -47,6 +47,7 @@ function handleAuthResult(authResult) {
     });
   }
 }
+
 
 // Load the client interfaces for the YouTube Analytics and Data APIs, which
 // are required to use the Google APIs JS client. More info is available at
