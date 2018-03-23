@@ -1,10 +1,10 @@
-var movies = ["Zoom"];
+var movies = [""];
 function displayMovieInfo() {
     var apiKey = "b5a04afb";
-    debugger;
-    var movie = $("#inputLocation").val().trim(); 
+    var movie = $("#inputName").val().trim(); 
+    var year = $("#inputYear").val().trim();
     // $(this).attr("data-name").val().trim();
-    var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=full&apikey=" + apiKey;
+    var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=" + year + "&plot=full&apikey=" + apiKey;
     console.log(queryURL);
 
         $.ajax({
@@ -12,6 +12,7 @@ function displayMovieInfo() {
             method: "GET"
         }).then(function (response) {
             var movieDiv = $("<div class='movie'>");
+            var imgURL = response.Poster;
             var image = $("<img>").attr("src", imgURL);
             movieDiv.append(image);
             var rating = response.Rated;
@@ -26,7 +27,7 @@ function displayMovieInfo() {
             var ratings = response.imdbRating;
             var pFour = $("<p>").text("IMDB Rating: " + ratings);
             movieDiv.append(pFour);
-            var imgURL = response.Poster;
+            
             
             $("#movies-view").append(movieDiv);
     });
@@ -51,5 +52,5 @@ test.click( function (event) {
         renderButtons();
     });
 $(document).on("click", ".movie-btn", displayMovieInfo);
-renderButtons();
+
     

@@ -30,7 +30,7 @@
     crossorigin="anonymous">
 
   <!-- Bootstrap JS reference     -->
- 
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
@@ -128,22 +128,19 @@
             </div>
         </div>
     </div> -->
-
-  <!-- Display website name and image -->
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-3">Project Sashimi</h1>
-      <p class="lead">Find a Good Movie</p>
+  <div id="container">
+    <!-- Display website name and image -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-3">Project Sashimi</h1>
+        <p class="lead">Find a Good Movie</p>
+      </div>
     </div>
+    <!-- End Brian HTML ------------------------------------------------>
+
+
+
   </div>
-  <!-- End Brian HTML ------------------------------------------------>
-  <div class = "container">
-    <div id="movies-view"></div>
-    <!-- Rendered Buttons will get Dumped Here  -->
-    <div id="buttons-view"></div>
-
-
-</div>
 
   <!-- Begin Amanda HTML ------------------------------------------------>
   <!-- ------------------------------------------------------------------>
@@ -182,13 +179,22 @@
 
 
   <!--Location form box-->
-  <div class="form-group mx-sm-3 mb-2">
-    <label for="inputLocation" class="sr-only">Location</label>
-    <input type="location" class="form-control" id="inputLocation" placeholder="Movie Title">
+  <div id="container">
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="inputName" class="sr-only">Location</label>
+      <input type="location" class="form-control" id="inputName" placeholder="Movie Title">
+    </div>
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="inputYear" class="sr-only">Location</label>
+      <input type="location" class="form-control" id="inputYear" placeholder="Movie Year">
+    </div>
+    <div class="container">
+      <div id="movies-view"></div>
+      <!-- Rendered Buttons will get Dumped Here  -->
+      <div id="buttons-view"></div>
 
-
-    <!--Dropdown box to choose date range to search-->
-    <!--<div class="dropdown">
+      <!--Dropdown box to choose date range to search-->
+      <!--<div class="dropdown">
                                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownDateButton" data-toggle="dropdown" aria-haspopup="true"
                                                 aria-expanded="false">All Dates
                                             </button>
@@ -199,14 +205,14 @@
                                                 <a class="dropdown-item" id="thisMonth" href="#">This Month</a>
 
                                             </div>-->
-    <!--Submit button-->
-    <button type="submit" class="btn btn-secondary" id="submit-movie">Find Events</button>
+      <!--Submit button-->
+      <button type="submit" class="btn btn-secondary" id="submit-movie">Find Events</button>
 
 
+    </div>
+    <!-- End Amanda HTML ------------------------------------------------>
+    <script type="text/javascript" src="./assets/java/movieapp.js"></script>
   </div>
-  <!-- End Amanda HTML ------------------------------------------------>
-  <script type="text/javascript" src="./assets/java/movieapp.js"></script>
-
 </body>
 
 
