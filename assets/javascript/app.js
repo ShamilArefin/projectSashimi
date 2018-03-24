@@ -9,7 +9,6 @@ var config = {
 };
 firebase.initializeApp(config);
 
-<<<<<<< HEAD
 //////////////////////////////////////////
 // Authentication //
 /////////////////////////////////////////
@@ -53,7 +52,6 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     } else {
         console.log("not logged in");
     }
-=======
 
 var provider = new firebase.auth.GoogleAuthProvider();
 var provider = new firebase.auth.FacebookAuthProvider();
@@ -68,5 +66,4 @@ auth.currentUser.linkWithPopup(provider).then(function (result) {
 }).catch(function (error) {
     // Handle Errors here.
     // ...
->>>>>>> 83606a756b85664b61dd84d5a4f1c49a63b9fab1
 });
