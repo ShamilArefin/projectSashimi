@@ -11,13 +11,65 @@
   firebase.initializeApp(config);
 
 
-    //var dataRef = firebase.database();
+    var movieData = firebase.database();
 
-    // Initial Values
-    //var user = "";
-    //var pass = "";
-   
+    //Initial Values
+$("#inputLocation").on("keyup", function(event){
+  var inputLocation = $("#inputLocation").val().trim();
+  console.log(inputLocation)
+  dataRef.ref().set({
+    inputLocation: inputLocation,
+});
 
+
+$("#year").trigger("keyup", function(event){
+  var year = $(this).val().trim();
+  console.log(year)
+  dataRef.ref().set({
+    year: year,
+});
+
+$("#btn btn-success").on("click",function(event){
+var title = $("#search_title").val().trim();  
+console.log(title);
+dataRef.ref().set({
+title: title,
+});
+
+
+  });
+
+
+
+// Read from the database
+myRef.addValueEventListener(new ValueEventListener() {
+  @Override
+  public void onDataChange(DataSnapshot dataSnapshot) {
+      // This method is called once with the initial value and again
+      // whenever data at this location is updated.
+      String value = dataSnapshot.getValue(String.class);
+      Log.d(TAG, "Value is: " + value);
+  }
+
+  @Override
+  public void onCancelled(DatabaseError error) {
+      // Failed to read value
+      Log.w(TAG, "Failed to read value.", error.toException());
+  }
+});
+
+
+  //   dataRef.ref().on("child_added", function(childSnapshot) {
+
+  //    //Log everything that's coming out of snapshot
+  //   console.log(childSnapshot.val().inputLocation);
+  //   console.log(childSnapshot.val().year);
+  //   console.log(childSnapshot.val().title);
+
+  // }, function(errorObject) {
+  //   console.log("Errors handled: " + errorObject.code);
+  // });
+});
     // Capture Button Click
     //$("#login").on("click", function(event) {
       //event.preventDefault();
@@ -50,48 +102,48 @@
     
 
 
-    $("#submitButton").on("click", function() {
-      // Don't refresh the page!
-      event.preventDefault();
+    // $("#submitButton").on("click", function() {
+    //   // Don't refresh the page!
+    //   event.preventDefault();
 
-      // YOUR TASK!!!
-      // Code in the logic for storing and retrieving the most recent user.
-      // Don't forget to provide initial data to your Firebase database.
-      var genre = $("#genre").val().trim();   
-      var fromYear = $("#inputFromYear").val().trim();
-      var toYear = $("#inputToYear").val().trim();
-      var imdbRating = $("#starRating").val().trim();
-      var movieRating = $("rating").val().trim();
+    //   // YOUR TASK!!!
+    //   // Code in the logic for storing and retrieving the most recent user.
+    //   // Don't forget to provide initial data to your Firebase database.
+    //   var genre = $("#genre").val().trim();   
+    //   var fromYear = $("#inputFromYear").val().trim();
+    //   var toYear = $("#inputToYear").val().trim();
+    //   var imdbRating = $("#starRating").val().trim();
+    //   var movieRating = $("rating").val().trim();
 
-      console.log(genre);
-      console.log(fromYear);
-      console.log(toYear);
-      console.log(imdbRating);
-      console.log(movieRating);
+    //   console.log(genre);
+    //   console.log(fromYear);
+    //   console.log(toYear);
+    //   console.log(imdbRating);
+    //   console.log(movieRating);
 
-      });
-
-
-      var queryURL = "https://www.omdbapi.com/?t=" + TheStand + "&y=&plot=short&apikey=trilogy";                                      
+    //   });
 
 
-      $.ajax({
-        url: queryURL,
-        method: "GET"
-      }).then(function(response) {
-        console.log(response)
+    //   var queryURL = "https://www.omdbapi.com/?t=" + TheStand + "&y=&plot=short&apikey=trilogy";                                      
+
+
+    //   $.ajax({
+    //     url: queryURL,
+    //     method: "GET"
+    //   }).then(function(response) {
+    //     console.log(response)
     
 
-      // Log everything that's coming out of snapshot
+    //   // Log everything that's coming out of snapshot
      
 
-      // Change the HTML to reflect
-      /* $("#name-display").text(snapshot.val().name);
-      $("#email-display").text(snapshot.val().email);
-      $("#age-display").text(snapshot.val().age);
-      $("#comment-display").text(snapshot.val().comment); */
+    //   // Change the HTML to reflect
+    //   /* $("#name-display").text(snapshot.val().name);
+    //   $("#email-display").text(snapshot.val().email);
+    //   $("#age-display").text(snapshot.val().age);
+    //   $("#comment-display").text(snapshot.val().comment); */
 
-      // Handle the errors
-    // }, function(errorObject) {
-    //   console.log("Errors handled: " + errorObject.code);
-    // });
+    //   // Handle the errors
+    // // }, function(errorObject) {
+    // //   console.log("Errors handled: " + errorObject.code);
+    // // });
