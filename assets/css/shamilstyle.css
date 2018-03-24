@@ -46,4 +46,15 @@ img {
 }
 .display-3{
     color: goldenrod;
+    font-family: 'Bungee Inline', cursive;
+}
+p{
+    font-family: 'Domine', serif;
+}
+.lead{
+    color: ghostwhite;
+    font-family: 'Domine', serif;
+}
+.caption{
+    color: ghostwhite;
 }
