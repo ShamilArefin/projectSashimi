@@ -20,6 +20,9 @@ function displayMovieInfo() {
             var released = response.Released;
             var pTwo = $("<p>").text("Released: " + released);
             movieDiv.append(pTwo);
+            var actors = response.Actors;
+            var pFive = $("<p>").text("Actors: " + actors);
+            movieDiv.append(pFive);
             var plot = response.Plot;
             var pThree = $("<p>").text("Plot: " + plot);
             movieDiv.append(pThree);

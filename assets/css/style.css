@@ -27,8 +27,9 @@ body{
     text-align: center;
     background-size: cover;
     background-repeat: no-repeat;
+    align-content: center;
 }
-img{
-    border-style: solid;
-    border-color: plum;
+img {
+    max-width: 100%;
+    max-height: 100%;
 }
