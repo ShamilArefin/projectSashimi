@@ -1,13 +1,6 @@
-.dropdown{
-    float: right;
-    margin-right: 16px;
-    color: pink;
-}
-.toggleButts{
-    text-align: center;
-}
+
 .jumbotron{
-    background-image: url(../images/searchboxbg.jpg);
+    background-image: url(../images/redcurtain.jpg);
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -15,9 +8,11 @@
     margin-bottom: 10px;
     padding-top: 40px;
     text-align: center;
+    border-style: solid;
+    border-color: goldenrod;
 }
 body{
-    background-image: url(../images/background.png);
+    background-image: url(../images/zigzagwool.png);
 }
 .movie{
     background-image: url(../images/searchboxbg.jpg);
@@ -35,7 +30,7 @@ img {
     max-height: 100%;
 }
 .thumbnail{
-    background-image: url(../images/searchboxbg.jpg);
+    background-image: url(../images/redbg.jpg);
     text-align: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -48,4 +43,7 @@ img {
 }
 .body{
     align-content: right;
+}
+.display-3{
+    color: goldenrod;
 }
