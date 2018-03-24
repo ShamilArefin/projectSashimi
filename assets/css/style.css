@@ -33,3 +33,37 @@
     background-color: white;
     border-color: rgb(82, 82, 82);
 }
+
+.footer{
+    position: relative;
+    bottom: 0px;
+    background: black;
+    border-top: 2px groove yellow;
+    /* border-bottom: 2px groove red; */
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: yellow;
+    width: 100%;
+    float: right;
+}
+
+.content {
+    min-height: calc(100vh - 70px);
+  }
+
+form{
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: normal;
+    background: yellow;
+    float: right;
+    padding: 5px;
+}
+
+#github, #linkedin, #stack {
+    z-index: 10;
+    height: 30px;
+    width: 30px;
+    margin: 10px 2px;
+}
