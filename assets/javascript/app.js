@@ -9,64 +9,42 @@ var config = {
 };
 firebase.initializeApp(config);
 
-<<<<<<< HEAD
 //////////////////////////////////////////
-// Authentication //
+// Store referred friends //
 /////////////////////////////////////////
 
-//Login elements
-var userName = document.getElementById("someUsername");
-var userPassword = document.getElementById("somePassword");
-var btnLogin = document.getElementById("someLogin");
-var btnSignup = document.getElementById("someSignup");
-var btnSignout = document.getElementById("someSignout");
+// Initial Values
+var name = "";
+var email = "";
 
-//Login event listener
-btnLogin.addEventListener('click', e => {
-//Collect login info
-    var email = userName.value;
-    var pass = userPassword.value;
-    var auth = firebase.auth();
+$("#add-user").on("click", function (event) {
+    event.preventDefault();
 
-//Log in
-    var promise = auth.signInWithEmailAndPassword(email, pass);
-    promise.catch(e => console(e.message));
+    // Grabbed values from text boxes
+    name = $("#name-input").val().trim();
+    email = $("#email-input").val().trim();
+
+    // Code for handling the push
+    database.ref().push({
+        name: name,
+        email: email,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+    });
+
 });
 
-//Sign up event listener
-btnSignup.addEventListener('click', e => {
-//Collect login info
-    var email = userName.value;
-    var pass = userPassword.value;
-    var auth = firebase.auth();
 
-//Sign up
-    var promise = auth.createUserWithEmailAndPassword(email, pass);
-    promise
-        .catch(e => console(e.message));
-});
+database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function (snapshot) {
+    // storing the snapshot.val() in a variable for convenience
+    var sv = snapshot.val();
 
-//Add listener 
-firebase.auth().onAuthStateChanged(firebaseUser => {
-    if(firebaseUser) {
-        console.log(firebaseUser);
-    } else {
-        console.log("not logged in");
-    }
-=======
+    // Console.loging the last user's data
+    console.log(sv.name);
 
-var provider = new firebase.auth.GoogleAuthProvider();
-var provider = new firebase.auth.FacebookAuthProvider();
-var provider = new firebase.auth.TwitterAuthProvider();
-var provider = new firebase.auth.GithubAuthProvider();
+    // Change the HTML to reflect
+    $("#name-display").text(sv.name);
 
-auth.currentUser.linkWithPopup(provider).then(function (result) {
-    // Accounts successfully linked.
-    var credential = result.credential;
-    var user = result.user;
-    // ...
-}).catch(function (error) {
-    // Handle Errors here.
-    // ...
->>>>>>> 83606a756b85664b61dd84d5a4f1c49a63b9fab1
+    // Handle the errors
+}, function (errorObject) {
+    console.log("Errors handled: " + errorObject.code);
 });
