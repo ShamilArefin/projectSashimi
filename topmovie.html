@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project Sashimi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    
+
+    <!-- jQuery reference -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <!-- Firebase reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
+    <!-- Bootstrap CSS reference -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!-- Begin Brian HTML ------------------------------------------------>
+    <!-- ------------------------------------------------------------------- -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Project Sashimi</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Login</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Information
+                    </a>
+                    <!-- Add functionality -->
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Top Movies</a>
+                        <a class="dropdown-item" href="#">About Us</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="contact.html">Subscribe</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Modal for login  -->
+    <div class="container">
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Login to Your Account</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form>
+                            <input type="text" name="user" placeholder="Email" id="someUsername">
+                            <input type="password" name="pass" placeholder="Password" id="somePassword">
+                            <input type="submit" name="login" class="login loginmodal-submit" value="Login" id="someLogin">
+                        </form>
+                    </div>
+                    <div class="login-help">
+                        <a href="register.html" id="someSignup">Register</a>
+                        <a href="#">Forgot Password</a>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id = "show"></div>
+    <script>
+    var apiKey = "&api_key=f8e8f558517f0a86c0fb65b50d7ca5ff";
+    var topURL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc" + apiKey;
+    //Calls our TMDB API to figure the movie API
+    $.ajax({
+        url: topURL,
+        method: "GET"
+    }).then(function (response) {
+        var topArray = response.results;
+        console.log(topArray);
+        for (var i = 0; i < topArray.length; i++){
+
+        var x = "";
+                        x += '<div class="col_1_of_3 span_1_of_3"> <img width="400" height="241" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2' + topArray[i].poster_path + '" alt=""/> <div class="desc"><h3 id="title">' + topArray[i].title +  '</h3> <h4 class="m_2">Release Date: ' + topArray[i].release_date + '</h4>' + '</div><div class="section group example rating"><div class="col_1_of_2 span_1_of_2"> <ul> <li><img src="images/men.png" alt=""/><div class="m_desc"><span class="m_2">' + topArray[i].vote_average + '%</span><br><span class="m_3">Rating</span></div><div class="clear"></div></li></ul> </div><div class="col_1_of_2 span_1_of_2"> <ul> <li><div class="m_desc"><span class="m_2">' + topArray[i].popularity + '%</span><br><span class="m_3">ImdbVotes</span></div><div class="clear"></div></li></ul></div><div class="clear"></div></div></div>'
+                        $("#show").append(x);
+                    }
+    });
+
+    </script>
+</body>
+</html>

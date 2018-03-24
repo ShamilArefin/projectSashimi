@@ -1,5 +1,5 @@
 $("#submit-search").on("click", function () {
-    var movieQuery = $("#input-location").val().trim();
+    var movieQuery = $("#search_title").val().trim();
     var apiKey = "&api_key=f8e8f558517f0a86c0fb65b50d7ca5ff";
     var pageParam = "&page=1&language=en-US";
     var queryURL = "https://api.themoviedb.org/3/search/movie?&query=" + movieQuery + pageParam + apiKey;
