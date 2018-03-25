@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/shamilstyle.css" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+
+    <!-- jQuery reference -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <!-- Firebase reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
+    <!-- Bootstrap CSS reference -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <!-- Bootstrap JS reference     -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Domine" rel="stylesheet">
+    <title>About The Team</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html"><img src = "./assets/images/sashimi-logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Login</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Information
+                    </a>
+                    <!-- Add functionality -->
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Events</a>
+                        <a class="dropdown-item" href="./aboutus.html">About Us</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Contact Us</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Modal for login  -->
+    <div class="container">
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Login to Your Account</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form>
+                            <input type="text" name="user" placeholder="Email" id="someUsername">
+                            <input type="password" name="pass" placeholder="Password" id="somePassword">
+                            <input type="submit" name="login" class="login loginmodal-submit" value="Login" id="someLogin">
+                        </form>
+                    </div>
+                    <div class="login-help">
+                        <a href="register.html" id="someSignup">Register</a>
+                        <a href="#">Forgot Password</a>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                    <!-- Display website name and image -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-3">Sashimi</h1>
+                <p class="lead">Learn more about the team that brought us this amazing app!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-md-3">
+                    <div class="thumbnail">
+                        <img src="./assets/images/sashimi-logo.png" alt="...">
+                        <div class="caption">
+                            <h3>Brian</h3>
+                            <p>...</p>
+                            <p>
+                                <a href="./uhuhuh.html" class="btn btn-primary" role="button">Github</a>
+                                <a href="./uhuhuh.html" class="btn btn-default" role="button">Button</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-3">
+                    <div class="thumbnail">
+                        <img src="./assets/images/sashimi-logo.png" alt="...">
+                        <div class="caption">
+                            <h3>Henry</h3>
+                            <p>...</p>
+                            <p>
+                                <a href="./uhuhuh.html" class="btn btn-primary" role="button">Github</a>
+                                <a href="./uhuhuh.html" class="btn btn-default" role="button">Button</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-3">
+                    <div class="thumbnail">
+                        <img src="./assets/images/sashimi-logo.png" alt="...">
+                        <div class="caption">
+                            <h3>Amanda</h3>
+                            <p>...</p>
+                            <p>
+                                <a href="./uhuhuh.html" class="btn btn-primary" role="button">Github</a>
+                                <a href="./uhuhuh.html" class="btn btn-default" role="button">Button</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-3">
+                    <div class="thumbnail">
+                        <img src="./assets/images/sashimi-logo.png" alt="...">
+                        <div class="caption">
+                            <h3>Shamil</h3>
+                            <p>...</p>
+                            <p>
+                                <a href="https://github.com/ShamilArefin" class="btn btn-primary" role="button">Github</a>
+                                <a href="./uhuhuh.html" class="btn btn-default" role="button">Button</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-3">
+                    <div class="thumbnail">
+                        <img src="./assets/images/sashimi-logo.png" alt="...">
+                        <div class="caption">
+                            <h3>Mirza</h3>
+                            <p>...</p>
+                            <p>
+                                <a href="./uhuhuh.html" class="btn btn-primary" role="button">Github</a>
+                                <a href="./uhuhuh.html" class="btn btn-default" role="button">Button</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

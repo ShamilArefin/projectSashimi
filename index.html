@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style2.css" />
 
 
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/shamilstyle.css" />    
+
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
 
     <!-- jQuery reference -->
@@ -37,7 +39,7 @@
 
     <!-- Begin Brian HTML ------------------------------------------------>
     <!-- ------------------------------------------------------------------- -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.html">Project Sashimi</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +49,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Login</a>
+                    <a class="nav-link" href="logicSignin.html">Login</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -56,48 +58,15 @@
                     </a>
                     <!-- Add functionality -->
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Events</a>
-                        <a class="dropdown-item" href="#">About Us</a>
+                        <a class="dropdown-item" href="topmovie.html">Top Movies</a>
+                        <a class="dropdown-item" href="aboutus.html">About Us</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Contact Us</a>
+                        <a class="dropdown-item" href="contact.html">Refer A Friend</a>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
-    <!-- Modal for login  -->
-    <div class="container">
-        <div class="modal fade" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Login to Your Account</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <form>
-                            <input type="text" name="user" placeholder="Email" id="someUsername">
-                            <input type="password" name="pass" placeholder="Password" id="somePassword">
-                            <input type="submit" name="login" class="login loginmodal-submit" value="Login" id="someLogin">
-                        </form>
-                    </div>
-                    <div class="login-help">
-                        <a href="register.html" id="someSignup">Register</a>
-                        <a href="#">Forgot Password</a>
-                    </div>
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
-
-                </div>
-            </div> 
-        </div>
-    </div>
     <!-- Display website name and image -->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
