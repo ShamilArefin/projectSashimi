@@ -1,0 +1,59 @@
+.jumbotron{
+    background-image: url(../images/redcurtain.jpg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 40px;
+    text-align: center;
+    border-style: solid;
+    border-color: goldenrod;
+}
+body{
+    background-image: url(../images/zigzagwool.png);
+}
+.movie{
+    background-image: url(../images/searchboxbg.jpg);
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-content: center;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.thumbnail{
+    background-image: url(../images/redbg.jpg);
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-content: center;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: .1px;
+    margin-bottom: 10px;
+}
+.body{
+    align-content: right;
+}
+.display-3{
+    color: goldenrod;
+    font-family: 'Bungee Inline', cursive;
+}
+p{
+    font-family: 'Domine', serif;
+}
+.lead{
+    color: ghostwhite;
+    font-family: 'Domine', serif;
+}
+.caption{
+    color: ghostwhite;
+}
