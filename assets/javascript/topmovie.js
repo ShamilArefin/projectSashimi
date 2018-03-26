@@ -26,7 +26,7 @@ $("#search-me").on("click", function (){
             console.log(trailerData);
             var videos = trailerData.videos.results[0].key;
             console.log(videos);
-            $("#youtube-here").attr("src", "src='https://www.youtube.com/embed/" + videos);
+            $("#youtube-here").attr("src", "https://www.youtube.com/embed/" + videos);
         });
     });
 });
