@@ -87,6 +87,13 @@
     margin-top: 10px;
     color: ghostwhite;
 }
+.video-area{
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    -webkit-border-image: url(../images/redfabric.jpg) 50 round; /* Safari 3.1-5 */
+    -o-border-image: url(../images/redfabric.jpg) 50 round; /* Opera 11-12.1 */
+    border-image: url(../images/redfabric.jpg) 50 round;
+}
 
         @import url("https://fonts.googleapis.com/css?family=Arimo:400,700");
         body {
