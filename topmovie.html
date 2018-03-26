@@ -26,7 +26,7 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css?family=Domine|Rye" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Domine|Rye" rel="stylesheet">
 
 </head>
 
@@ -35,7 +35,9 @@
     <!-- Begin Brian HTML ------------------------------------------------>
     <!-- ------------------------------------------------------------------- -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html"><img src = "./assets/images/sashimi-logo.png" width = "40px"></a>
+        <a class="navbar-brand" href="index.html">
+            <img src="./assets/images/sashimi-logo.png" width="40px">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -62,19 +64,19 @@
             </ul>
         </div>
     </nav>
- 
-    <div class = "container">
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                    <h1 class="display-3">Top Movies</h1>
-                </div>
-            </div>
-            </div>
 
-    <div class = "container">
-        <div class = "topmovies">
-    <div id="show"></div>
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-3">Top Movies</h1>
+            </div>
+        </div>
     </div>
+
+    <div class="container">
+        <div class="topmovies">
+            <div id="show"></div>
+        </div>
     </div>
     <script>
         var apiKey = "&api_key=f8e8f558517f0a86c0fb65b50d7ca5ff";
