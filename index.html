@@ -31,6 +31,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Domine|Rye" rel="stylesheet">
+  <script src = "js/jquery.min.js"></script>
 
 </head>
 
@@ -88,7 +89,7 @@
           <input id="year" type="text" class="form-control" placeholder="Year">
         </div>
 
-        <button onclick="search_title()" class="btn btn-default" type="button">Search by Title</button>
+        <button onclick="search_title()" class="btn btn-default" type="button" id = "search-me">Search by Title</button>
       </form>
 
     </center>
@@ -98,7 +99,12 @@
 
     </center>
   </div>
-
+  <div class="container-fluid">
+    <center id="youtube-video">
+      <iframe width="420" height="315" id ="youtube-here">
+      </iframe>
+    </center>
+  </div>
 
   <!-- End Brian HTML -->
   <!-- Begin Amanda HTML -->
@@ -142,6 +148,7 @@
       xmlhttp.send();
     }
   </script>
+  <script src="assets/javascript/topmovie.js"></script>
 
 </body>
 
