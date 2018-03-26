@@ -7,13 +7,54 @@
     text-align: center;
 }
 .jumbotron{
-    background-image: url(../images/searchboxbg.jpg);
+    background-image: url(../images/redbg.jpg);
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 10px;
     margin-bottom: 10px;
     padding-top: 40px;
+    text-align: center;
+    border-style: solid;
+    border-color: goldenrod;
+}
+.thumbnail{
+    background-image: url(../images/redbg.jpg);
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-content: center;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: .1px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.lead{
+    color: ghostwhite;
+    font-family: 'Domine', serif;
+}
+.caption{
+    color: ghostwhite;
+}
+.display-3{
+    color: goldenrod;
+    font-family: 'Rye', cursive;
+}
+.topmovies{
+    background-image: url(../images/redbg.jpg);
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-content: center;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: .1px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: ghostwhite;
 }
 
         @import url("https://fonts.googleapis.com/css?family=Arimo:400,700");
@@ -26,6 +67,7 @@
         font-size: 14px;
         color: #010b26;
         overflow-x: hidden;
+        background-image: url(../images/zigzagwool.png);
         }
         * {
         -webkit-transition: 300ms;
@@ -42,6 +84,7 @@
         }
         h1, h2, h3, h4, h5, p {
         font-weight: 400;
+        color: ghostwhite;
         }
         a {
         text-decoration: none;
