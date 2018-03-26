@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
-    
+
 
     <!-- jQuery reference -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -92,25 +93,26 @@
             </div>
         </div>
     </div>
-    <div id = "show"></div>
+    <div id="show"></div>
     <script>
-    var apiKey = "&api_key=f8e8f558517f0a86c0fb65b50d7ca5ff";
-    var topURL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc" + apiKey;
-    //Calls our TMDB API to figure the movie API
-    $.ajax({
-        url: topURL,
-        method: "GET"
-    }).then(function (response) {
-        var topArray = response.results;
-        console.log(topArray);
-        for (var i = 0; i < topArray.length; i++){
+        var apiKey = "&api_key=f8e8f558517f0a86c0fb65b50d7ca5ff";
+        var topURL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc" + apiKey;
+        //Calls our TMDB API to figure the movie API
+        $.ajax({
+            url: topURL,
+            method: "GET"
+        }).then(function (response) {
+            var topArray = response.results;
+            console.log(topArray);
+            for (var i = 0; i < topArray.length; i++) {
 
-        var x = "";
-                        x += '<div class="col_1_of_3 span_1_of_3"> <img width="400" height="241" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2' + topArray[i].poster_path + '" alt=""/> <div class="desc"><h3 id="title">' + topArray[i].title +  '</h3> <h4 class="m_2">Release Date: ' + topArray[i].release_date + '</h4>' + '</div><div class="section group example rating"><div class="col_1_of_2 span_1_of_2"> <ul> <li><img src="images/men.png" alt=""/><div class="m_desc"><span class="m_2">' + topArray[i].vote_average + '%</span><br><span class="m_3">Rating</span></div><div class="clear"></div></li></ul> </div><div class="col_1_of_2 span_1_of_2"> <ul> <li><div class="m_desc"><span class="m_2">' + topArray[i].popularity + '%</span><br><span class="m_3">ImdbVotes</span></div><div class="clear"></div></li></ul></div><div class="clear"></div></div></div>'
-                        $("#show").append(x);
-                    }
-    });
+                var x = "";
+                x += '<div class="col_1_of_3 span_1_of_3"> <img width="400" height="241" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2' + topArray[i].poster_path + '" alt=""/> <div class="desc"><h3 id="title">' + topArray[i].title + '</h3> <h4 class="m_2">Release Date: ' + topArray[i].release_date + '</h4>' + '</div><div class="section group example rating"><div class="col_1_of_2 span_1_of_2"> <ul> <li><img src="images/men.png" alt=""/><div class="m_desc"><span class="m_2">' + topArray[i].vote_average + '%</span><br><span class="m_3">Rating</span></div><div class="clear"></div></li></ul> </div><div class="col_1_of_2 span_1_of_2"> <ul> <li><div class="m_desc"><span class="m_2">' + topArray[i].popularity + '%</span><br><span class="m_3">ImdbVotes</span></div><div class="clear"></div></li></ul></div><div class="clear"></div></div></div>'
+                $("#show").append(x);
+            }
+        });
 
     </script>
 </body>
+
 </html>
