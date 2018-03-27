@@ -48,6 +48,7 @@ $("#search-me").on("click", function () {
     };
 
     ifSearched();
+    return;
 });
 
 
