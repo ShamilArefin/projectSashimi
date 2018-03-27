@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .jumbotron {
     text-align: center;
 }
@@ -34,7 +33,6 @@
     background-color: white;
     border-color: rgb(82, 82, 82);
 }
-=======
 .dropdown{
     float: right;
     margin-right: 16px;
@@ -244,4 +242,23 @@
         .year{
         width: 20px;
         }
->>>>>>> f544678b87b72f8755b183bb12249c331e790911
+
+        .footer{
+            position: relative;
+            bottom: 0px;
+            background: black;
+            border-top: 2px groove yellow;
+            /* border-bottom: 2px groove red; */
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            color: yellow;
+            width: 100%;
+            float: right;
+        }
+
+        #github {
+            z-index: 10;
+            height: 60px;
+            width: 60px;
+        }
