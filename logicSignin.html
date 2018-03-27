@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+// Initialize Firebase
 
 
-=======
->>>>>>> 1255750cc47cb239560092936d2d3b3fd26692b7
 <!DOCTYPE html>
 <!--
 Copyright (c) 2016 Google Inc.
@@ -26,19 +24,18 @@ limitations under the License.
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/png" href="assets/images/sashimi-logo.png"/>
 
-  <link rel="stylesheet" href="assets/css/shamilstyle.css">
-  <link rel="stylesheet" href="assets/css/style.css">  
-
   <!-- Material Design Theming -->
   <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
+  <link rel="stylesheet" href="main.css">
+
   <!-- Import and configure the Firebase SDK -->
   <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
   <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
 
-
+  <script src="logicSignIn.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -235,40 +232,31 @@ limitations under the License.
   </script>
 </head>
 <body>
-<<<<<<< HEAD
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
   <!-- Header section containing title -->
-  <header class="mdl-layout__header mdl-color-text--white mdl-color--goldenrod">
+  <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
     <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
       <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
         <a href="/"><h3>Firebase Authentication</h3></a>
       </div>
     </div>
   </header>
-=======
-        <a class="navbar-brand" href="index.html">
-          <img src="assets/images/sashimi-gif.gif" width="40px">
-        </a>
->>>>>>> 1255750cc47cb239560092936d2d3b3fd26692b7
 
+  <main class="mdl-layout__content mdl-color--grey-100">
     <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
 
       <!-- Container for the demo -->
       <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-<<<<<<< HEAD
-        <div class="mdl-card__title mdl-color--grey-600 mdl-color-text--white">
-=======
-        <div class="mdl-card__title mdl-color--red-600 mdl-color-text--black">
->>>>>>> 1255750cc47cb239560092936d2d3b3fd26692b7
+        <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
           <h2 class="mdl-card__title-text">Sashimi Account Login</h2>
         </div>
-        <div class="mdl-card__supporting-text mdl-color-text--black-600">
-          <p></p>
+        <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+          <p>Enter an email and password below and either sign in to an existing account or sign up</p>
 
-          <input class="mdl-textfield__input" type="text" id="email" name="email" placeholder="Email"/>
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
           &nbsp;&nbsp;&nbsp;
-          <input class="mdl-textfield__input" type="password" id="password" name="password" placeholder="Password"/>
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
           <br/><br/>
           <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
           &nbsp;&nbsp;&nbsp;
@@ -284,11 +272,11 @@ limitations under the License.
 
           <hr>
           <div class="quickstart-user-details-container">
-            <span id="quickstart-sign-in-status"></span>
+            <span id="quickstart-sign-in-status">Unknown</span>
             <div><code></code></div>
-            <pre><code id="quickstart-account-details">Welcom</code></pre>
+            <pre><code id="quickstart-account-details"></code></pre>
           </div>
-          <p class="mdl-card__title mdl-color--white-600 mdl-color-text--red" id="errorMessageBox"></p>
+          <p id="errorMessageBox"></p>
         </div>
       </div>
 
@@ -298,10 +286,5 @@ limitations under the License.
 </body>
 </html>
 
-<<<<<<< HEAD
 
-
-
-
-=======
->>>>>>> 1255750cc47cb239560092936d2d3b3fd26692b7
+Add CommentCollapse 

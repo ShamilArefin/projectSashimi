@@ -5,7 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/shamilstyle.css" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/images/sashimi-logo.png" />
+
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="assets/css/shamilstyle.css" />-->
+
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
 
@@ -25,14 +31,16 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    
-    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Domine" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Domine|Rye" rel="stylesheet">
     <title>About The Team</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html"><img src = "./assets/images/sashimi-logo.png"></a>
+        <a class="navbar-brand" href="index.html">
+            <img src="./assets/images/sashimi-logo.png" width="40px">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -41,7 +49,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Login</a>
+                    <a class="nav-link" href="./loginPage.html">Login</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -50,10 +58,10 @@
                     </a>
                     <!-- Add functionality -->
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Events</a>
+                        <a class="dropdown-item" href="./topmovie.html">Top Movies</a>
                         <a class="dropdown-item" href="./aboutus.html">About Us</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Contact Us</a>
+                        <a class="dropdown-item" href="./contact.html">Refer A Friend</a>
                     </div>
                 </li>
             </ul>
@@ -97,8 +105,7 @@
     <div class="container">
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <h1 class="display-3">Sashimi</h1>
-                <p class="lead">Learn more about the team that brought us this amazing app!</p>
+                <h1 class="display-3">The Team</h1>
             </div>
         </div>
     </div>
@@ -108,69 +115,79 @@
             <div class="row">
                 <div class="col-sm-4 col-md-3">
                     <div class="thumbnail">
-                        <img src="./assets/images/sashimi-logo.png" alt="...">
+                        <img src="./assets/images/machoman.jpg" alt="Brian" width="200px">
                         <div class="caption">
-                            <h3>Brian</h3>
-                            <p>...</p>
+                            <h3>Brian Nguyen</h3>
+                            <p>The tower of power, too sweet to be sour, funky like a monkey, oooooooohhh yeah.</p>
                             <p>
                                 <a href="./uhuhuh.html" class="btn btn-primary" role="button">Github</a>
-                                <a href="./uhuhuh.html" class="btn btn-default" role="button">Button</a>
+                                <a href="./uhuhuh.html" class="btn btn-default" role="button">MySpace</a>
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4 col-md-3">
                     <div class="thumbnail">
-                        <img src="./assets/images/sashimi-logo.png" alt="...">
+                        <img src="./assets/images/lukeskywalker.jpg" alt="Henry" width="200px">
                         <div class="caption">
-                            <h3>Henry</h3>
-                            <p>...</p>
+                            <h3>Henry Winget</h3>
+                            <p>The force is strong with this one. Designer of the Sashimi logo. One half of the design team.</p>
                             <p>
-                                <a href="./uhuhuh.html" class="btn btn-primary" role="button">Github</a>
-                                <a href="./uhuhuh.html" class="btn btn-default" role="button">Button</a>
+                                <a href="https://github.com/henrywinget" class="btn btn-primary" role="button">Github</a>
+                                <a href="https://twitter.com/henrywinget" class="btn btn-default" role="button">Twitter</a>
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4 col-md-3">
                     <div class="thumbnail">
-                        <img src="./assets/images/sashimi-logo.png" alt="...">
+                        <img src="./assets/images/frisk.jpg" alt="Amanda" width="200px">
                         <div class="caption">
-                            <h3>Amanda</h3>
-                            <p>...</p>
+                            <h3>Amanda Spero</h3>
+                            <p>Filled with Determination. You need it to be the Firebase powerhouse of the team.</p>
                             <p>
                                 <a href="./uhuhuh.html" class="btn btn-primary" role="button">Github</a>
-                                <a href="./uhuhuh.html" class="btn btn-default" role="button">Button</a>
+                                <a href="./uhuhuh.html" class="btn btn-default" role="button">Tumblr</a>
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4 col-md-3">
                     <div class="thumbnail">
-                        <img src="./assets/images/sashimi-logo.png" alt="...">
+                        <img src="./assets/images/stevonnie.png" alt="Shamil" width="200px">
                         <div class="caption">
-                            <h3>Shamil</h3>
-                            <p>...</p>
+                            <h3>Shamil Arefin</h3>
+                            <p>If every pork chop were perfect we wouldn't have hot dogs. The other half of the design team.</p>
                             <p>
                                 <a href="https://github.com/ShamilArefin" class="btn btn-primary" role="button">Github</a>
-                                <a href="./uhuhuh.html" class="btn btn-default" role="button">Button</a>
+                                <a href="https://www.instagram.com/landoflitany/" class="btn btn-default" role="button">Instagram</a>
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4 col-md-3">
                     <div class="thumbnail">
-                        <img src="./assets/images/sashimi-logo.png" alt="...">
+                        <img src="./assets/images/willsmith.png" alt="Mirza" width="200px">
                         <div class="caption">
-                            <h3>Mirza</h3>
-                            <p>...</p>
+                            <h3>Mirza Jewel</h3>
+                            <p>Welcome to Earth, where coders saved the planet using java and ajax pulls.</p>
                             <p>
-                                <a href="./uhuhuh.html" class="btn btn-primary" role="button">Github</a>
-                                <a href="./uhuhuh.html" class="btn btn-default" role="button">Button</a>
+                                <a href="https://github.com/mirzajewel" class="btn btn-primary" role="button">Github</a>
+                                <a href="./uhuhuh.html" class="btn btn-default" role="button">GeoCities</a>
                             </p>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="row">
+            <div class="col lg 12">
+                <a href="https://github.com/ShamilArefin/projectSashimi" target="_blank">
+                    <img id="github" src="assets/images/sashimi-gif.gif" alt="GitHub Icon">
+                    <a href="./aboutus.html">Team Ramen &copy; 2018</a>
+                </a>
             </div>
         </div>
     </div>

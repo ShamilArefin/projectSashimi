@@ -8,6 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/images/sashimi-logo.png" />
+
     <!-- Bootstrap CSS reference -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
@@ -19,12 +23,15 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Domine|Rye" rel="stylesheet">
 
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Project Sashimi</a>
+        <a class="navbar-brand" href="index.html">
+            <img src="./assets/images/sashimi-logo.png" width="40px">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -33,7 +40,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Login</a>
+                    <a class="nav-link" href="./loginPage.html">Login</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -42,10 +49,10 @@
                     </a>
                     <!-- Add functionality -->
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Top Movies</a>
-                        <a class="dropdown-item" href="#">About Us</a>
+                        <a class="dropdown-item" href="./topmovie.html">Top Movies</a>
+                        <a class="dropdown-item" href="./aboutus.html">About Us</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Refer a friend</a>
+                        <a class="dropdown-item" href="./contact.html">Refer A Friend</a>
                     </div>
                 </li>
             </ul>
@@ -85,27 +92,52 @@
         </div>
     </div>
 
-    <div id="register" class="animate form">
-        <form>
-            <h1>Sign up</h1>
-            <p>
-                <label for="emailsignup" class="youmail" data-icon="e"> Your email</label>
-                <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="Email" />
-            </p>
-            <p>
-                <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
-                <input id="passwordsignup" name="passwordsignup" required="required" type="password" />
-            </p>
-            <p>
-                <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-                <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" />
-            </p>
-            <p class="signin button">
-                <input type="submit" value="Sign up" id="signup" />
-            </p>
-        </form>
+    <div class="container">
+        <div class="register">
+            <div id="register" class="animate form">
+                <form>
+                    <h1>Sign up</h1>
+                    <p>
+                        <label for="emailsignup" class="youmail" data-icon="e"> Your email</label>
+                        <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="Email" />
+                    </p>
+                    <p>
+                        <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
+                        <input id="passwordsignup" name="passwordsignup" required="required" type="password" />
+                    </p>
+                    <p>
+                        <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
+                        <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" />
+                    </p>
+                    <p class="signin button">
+                        <input type="submit" value="Sign up" id="signup" />
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="show-container" class="container-fluid">
+        <center id="show">
+
+        </center>
+        <center id="youtube-video">
+            <iframe width="420" height="315" id="youtube-here" style="visibility: hidden;">
+            </iframe>
+        </center>
+    </div>
+    <div class="footer">
+        <div class="row">
+            <div class="col lg 12">
+                <a href="https://github.com/ShamilArefin/projectSashimi" target="_blank">
+                    <img id="github" src="assets/images/sashimi-gif.gif" alt="GitHub Icon">
+                    <a href="./aboutus.html">Team Ramen &copy; 2018</a>
+                </a>
+            </div>
+        </div>
     </div>
     <script src="assets/javascript/app.js"></script>
+
 </body>
+
 
 </html>
