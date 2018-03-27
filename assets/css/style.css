@@ -93,6 +93,7 @@
     -webkit-border-image: url(../images/redfabric.jpg) 50 round; /* Safari 3.1-5 */
     -o-border-image: url(../images/redfabric.jpg) 50 round; /* Opera 11-12.1 */
     border-image: url(../images/redfabric.jpg) 50 round;
+    padding-top: 15px;
 }
 
         @import url("https://fonts.googleapis.com/css?family=Arimo:400,700");
