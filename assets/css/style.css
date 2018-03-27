@@ -130,6 +130,27 @@
     border-color: #d63031;
     border-width: 10px;
 }
+.navbar{
+    border-bottom-style: outset;
+    border-bottom-color: #d63031;
+    border-bottom-width: 10px;
+    background-image: url(../images/redbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.footer{
+    position: relative;
+    bottom: 0px;
+    background-image: url(../images/redbg.jpg);
+    border-top: 10px outset #d63031;
+    /* border-bottom: 2px groove red; */
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #d63031;
+    width: 100%;
+    float: right;
+}
 
         @import url("https://fonts.googleapis.com/css?family=Arimo:400,700");
         body {
@@ -282,19 +303,7 @@
         width: 20px;
         }
 
-        .footer{
-            position: relative;
-            bottom: 0px;
-            background: grey;
-            border-top: 2px groove yellow;
-            /* border-bottom: 2px groove red; */
-            text-align: center;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            color: yellow;
-            width: 100%;
-            float: right;
-        }
+
 
         #github {
             z-index: 10;
