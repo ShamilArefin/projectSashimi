@@ -285,7 +285,7 @@
         .footer{
             position: relative;
             bottom: 0px;
-            background: black;
+            background: grey;
             border-top: 2px groove yellow;
             /* border-bottom: 2px groove red; */
             text-align: center;
