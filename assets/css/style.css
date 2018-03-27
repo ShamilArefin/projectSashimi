@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 .jumbotron {
     text-align: center;
 }
 
+=======
+>>>>>>> 1816a8957d2186d752a1ba3ccce5f8675268801e
 .bg-light {
     background-color: #f8f9fa!important;
 }
@@ -50,8 +53,9 @@
     margin-bottom: 10px;
     padding-top: 40px;
     text-align: center;
-    border-style: solid;
-    border-color: goldenrod;
+    border-style: outset;
+    border-color: #d63031;
+    border-width: 10px;
 }
 .thumbnail{
     background-image: url(../images/redbg.jpg);
@@ -90,6 +94,44 @@
     margin-bottom: 10px;
     margin-top: 10px;
     color: ghostwhite;
+    border-style: outset;
+    border-color: #d63031;
+    border-width: 10px;
+}
+.video-area{
+    padding-top: 15px;
+}
+.refer{
+    background-image: url(../images/redbg.jpg);
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-content: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-style: outset;
+    border-color: #d63031;
+    border-width: 10px;
+}
+.register{
+    background-image: url(../images/redbg.jpg);
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-content: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-style: outset;
+    border-color: #d63031;
+    border-width: 10px;
 }
 
         @import url("https://fonts.googleapis.com/css?family=Arimo:400,700");
@@ -242,6 +284,7 @@
         .year{
         width: 20px;
         }
+<<<<<<< HEAD
 
         .footer{
             position: relative;
@@ -262,3 +305,5 @@
             height: 60px;
             width: 60px;
         }
+=======
+>>>>>>> 1816a8957d2186d752a1ba3ccce5f8675268801e
