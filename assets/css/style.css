@@ -1,3 +1,38 @@
+.jumbotron {
+    text-align: center;
+}
+
+.bg-light {
+    background-color: #f8f9fa!important;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+}
+
+.navbar-inverse .navbar-text {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: #8e0038;
+}
+
+.btn {
+    background: #fd558f;
+}
+
+
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
+    color: black;
+    background-color: white;
+    border-color: rgb(82, 82, 82);
+}
 .dropdown{
     float: right;
     margin-right: 16px;
@@ -7,13 +42,93 @@
     text-align: center;
 }
 .jumbotron{
-    background-image: url(../images/searchboxbg.jpg);
+    background-image: url(../images/redbg.jpg);
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 10px;
     margin-bottom: 10px;
     padding-top: 40px;
+    text-align: center;
+    border-style: outset;
+    border-color: #d63031;
+    border-width: 10px;
+}
+.thumbnail{
+    background-image: url(../images/redbg.jpg);
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-content: center;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: .1px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.lead{
+    color: ghostwhite;
+    font-family: 'Domine', serif;
+}
+.caption{
+    color: ghostwhite;
+}
+.display-3{
+    color: goldenrod;
+    font-family: 'Rye', cursive;
+}
+.topmovies{
+    background-image: url(../images/redbg.jpg);
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-content: center;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: .1px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: ghostwhite;
+    border-style: outset;
+    border-color: #d63031;
+    border-width: 10px;
+}
+.video-area{
+    padding-top: 15px;
+}
+.refer{
+    background-image: url(../images/redbg.jpg);
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-content: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-style: outset;
+    border-color: #d63031;
+    border-width: 10px;
+}
+.register{
+    background-image: url(../images/redbg.jpg);
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-content: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-style: outset;
+    border-color: #d63031;
+    border-width: 10px;
 }
 
         @import url("https://fonts.googleapis.com/css?family=Arimo:400,700");
@@ -26,6 +141,7 @@
         font-size: 14px;
         color: #010b26;
         overflow-x: hidden;
+        background-image: url(../images/zigzagwool.png);
         }
         * {
         -webkit-transition: 300ms;
@@ -42,6 +158,7 @@
         }
         h1, h2, h3, h4, h5, p {
         font-weight: 400;
+        color: ghostwhite;
         }
         a {
         text-decoration: none;
@@ -163,4 +280,24 @@
         }
         .year{
         width: 20px;
+        }
+
+        .footer{
+            position: relative;
+            bottom: 0px;
+            background: grey;
+            border-top: 2px groove yellow;
+            /* border-bottom: 2px groove red; */
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            color: yellow;
+            width: 100%;
+            float: right;
+        }
+
+        #github {
+            z-index: 10;
+            height: 60px;
+            width: 60px;
         }
